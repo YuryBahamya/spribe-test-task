@@ -1,0 +1,34 @@
+<configuration>
+  <!-- Generating a unique file name -->
+  <define name="timestampFileName" class="co.spribe.utils.TimestampLogFileName"/>
+
+  <!-- Console log -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] [%X{testName}] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- File with a unique name -->
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>logs/${timestampFileName}</file>
+    <append>false</append>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{testName}] %-5level %logger{36} - %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <!-- Root logger -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="FILE"/>
+  </root>
+
+  <!-- Logger for RestAssured -->
+  <logger name="RestAssured" level="INFO" additivity="false">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="FILE"/>
+  </logger>
+
+</configuration>

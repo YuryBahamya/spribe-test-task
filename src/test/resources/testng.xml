@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >
+<suite name="Player API Tests">
+  <listeners>
+    <listener class-name="co.spribe.listeners.ThreadListener"/>
+  </listeners>
+
+  <test name="Create Player API Tests">
+    <classes>
+      <class name="co.spribe.tests.supervisor.CreatePlayerBySupervisorPositiveTest"/>
+      <class name="co.spribe.tests.supervisor.CreatePlayerBySupervisorNegativeTest"/>
+      <class name="co.spribe.tests.admin.CreatePlayerByAdminPositiveTest"/>
+      <class name="co.spribe.tests.admin.CreatePlayerByAdminNegativeTest"/>
+      <class name="co.spribe.tests.user.CreatePlayerByUserNegativeTest"/>
+    </classes>
+  </test>
+
+  <test name="Delete Player API Tests">
+    <classes>
+      <class name="co.spribe.tests.supervisor.DeletePlayerBySupervisorPositiveTest"/>
+      <class name="co.spribe.tests.supervisor.DeletePlayerBySupervisorNegativeTest"/>
+      <class name="co.spribe.tests.admin.DeletePlayerByAdminPositiveTest"/>
+      <class name="co.spribe.tests.admin.DeletePlayerByAdminNegativeTest"/>
+      <class name="co.spribe.tests.user.DeletePlayerByUserNegativeTest"/>
+    </classes>
+  </test>
+
+  <test name="Update Player API Tests">
+    <classes>
+      <class name="co.spribe.tests.supervisor.UpdatePlayerBySupervisorPositiveTest"/>
+      <class name="co.spribe.tests.supervisor.UpdatePlayerBySupervisorNegativeTest"/>
+      <class name="co.spribe.tests.admin.UpdatePlayerByAdminPositiveTest"/>
+      <class name="co.spribe.tests.admin.UpdatePlayerByAdminNegativeTest"/>
+      <class name="co.spribe.tests.user.UpdatePlayerByUserNegativeTest"/>
+    </classes>
+  </test>
+
+  <test name="Get Player API Tests">
+    <classes>
+      <class name="co.spribe.tests.publicapi.GetPlayerPositiveTest"/>
+      <class name="co.spribe.tests.publicapi.GetPlayerNegativeTest"/>
+    </classes>
+  </test>
+
+  <test name="Get All Players API Tests">
+    <classes>
+      <class name="co.spribe.tests.publicapi.GetAllPlayersTest"/>
+    </classes>
+  </test>
+</suite>
